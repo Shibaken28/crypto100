@@ -1,0 +1,34 @@
+[
+    {
+        "id"     : "test1",
+        "lvl"    : 1,
+        "symbol" : "rect",
+        "letter" : "0",
+        "require": [],
+        "pos"    : [100,200]
+    },
+    {
+        "id"     : "test2",
+        "lvl"    : 2,
+        "symbol" : "rect",
+        "letter" : "1",
+        "require": ["test1"],
+        "pos"    : [300,100]
+    },
+    {
+        "id"     : "test3",
+        "lvl"    : 3,
+        "symbol" : "rect",
+        "letter" : "2",
+        "require": ["test1"],
+        "pos"    : [300,300]
+    },
+    {
+        "id"     : "test4",
+        "lvl"    : 4,
+        "symbol" : "rect",
+        "letter" : "3",
+        "require": ["test2","test3"],
+        "pos"    : [500,200]
+    }
+]
