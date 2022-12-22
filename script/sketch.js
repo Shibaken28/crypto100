@@ -1,6 +1,15 @@
 let problems = {};
 let jsondata;
 let cursorPos = new Object();
+let selected = "";
+let trying = false;
+
+let dialogSwitch = document.getElementById("dialog-1");
+let dialog = document.getElementById("dialog");
+
+dialogSwitch.checked  = false;
+dialog.hidden = true;
+
 
 // 起動時の処理
 window.addEventListener("load", ()=>{
@@ -9,7 +18,6 @@ window.addEventListener("load", ()=>{
     fetch("./problems/problems.json")
         .then( response => response.json())
         .then( data => formatJSON(data));
-    
 });
 
 function formatJSON(data){
@@ -41,7 +49,6 @@ container.pivot.y = 0;
 container.x = 0;
 container.y = 0;
 container.interactive = true;
-
 app.stage.addEventListener('pointermove', (e) => {
     cursorPos = e.global;
     checkMouseOver();
@@ -57,6 +64,7 @@ app.stage.hitArea = app.screen;
 app.stage.on('pointerdown',onDragStart,onDragStart);
 app.stage.on('pointerup', onDragEnd);
 app.stage.on('pointerupoutside', onDragEnd);
+app.stage.on('pointerdown', onClick);
 let dragPosX, dragPosY;
 let isDragging = false;
 
@@ -79,6 +87,7 @@ function onDragMove(event) {
 }
 
 function onDragStart(event) {
+    if(trying)return;
     // console.log("grab");
     dragPosX = event.global.x;
     dragPosY = event.global.y;
@@ -119,7 +128,6 @@ function initProblems(){
         problems[p.id].block = new PIXI.Graphics();
         blocks.addChild(problems[p.id].block);
     }
-    console.log(problems);
 }
 
 function checkUnlock(){
@@ -194,6 +202,7 @@ function drawProblems(){
 
 function checkMouseOver() {
     let mp = container.toLocal(cursorPos);
+    selected = "";
     for (let id of Object.keys(problems)) {
         let blockSize = 100;
         let half = blockSize/2;
@@ -201,11 +210,26 @@ function checkMouseOver() {
         if(pos[0] - half <= mp.x && mp.x <= pos[0] + half && pos[1] - half <= mp.y && mp.y <= pos[1] + half){
             problems[id].block.scale.x = 1.2;
             problems[id].block.scale.y = 1.2;
+            selected = id;
         }else{
             problems[id].block.scale.x = 1.0;
             problems[id].block.scale.y = 1.0;
         }
     }
+}
+
+function onClick() {
+    if(selected==""){
+        dialogSwitch.checked = false;
+        trying = false;
+        return;
+    }
+    if(problems[selected].status=="lock")return;
+    //問題dialogを表示
+    dialogSwitch.checked = true;
+    dialog.hidden = false;
+    trying = true;
+    dialog.source = "./problems/html/"+selected+".html\"";
 }
 
 

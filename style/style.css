@@ -11,8 +11,110 @@
     overflow: auto;
   }
 
-  div{  
+
+.dialog{
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+	text-align: center;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 2em;
+}
+
+.box{
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(10, 171, 211);
+    border-radius: 30px 30px 30px 30px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, .5);
+    font-family: "Noto Sans JP"; 
+	padding: 10px;
+}
+
+.answer-box{
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(10, 171, 211);
+    border-radius: 30px 30px 30px 30px;
+    position: absolute;
+    top: 310%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, .5);
+    font-family: "Noto Sans JP"; 
+	padding: 10px;
+}
+
+.check-button{
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(10, 171, 211);
+    border-radius: 30px 30px 30px 30px;
+    position: absolute;
+    top: 310%;
+    left: 300%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 25px 25px 0 rgba(0, 0, 0, .5);
+    font-family: "Noto Sans JP"; 
+	padding: 10px;
+}
+
+
+
+.checkbox + .dialog {
+  animation-name: dialog-reverse;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+.checkbox:checked + .dialog {
+  animation-name: dialog;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+}
+
+@keyframes dialog-init {
+  99% {
+    z-index: 2;
   }
+  100% {
+    z-index: 0;
+  }
+}
+
+@keyframes dialog {
+  from {
+    opacity: 0;
+    top: -50%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+@keyframes dialog-reverse  {
+  from {
+    opacity: 1;
+    top: 50%;
+  }
+  to {
+    opacity: 0;
+    top: -50%;
+  }
+}
 
   .noselect{
     user-select: none;
@@ -25,11 +127,13 @@
   }
 
 * {
-   -ms-user-select: none; /* IE 10+ */
+  /*
+  -ms-user-select: none; 
    -moz-user-select: -moz-none;
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+   */
    margin: 0;
 }
 
