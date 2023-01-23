@@ -1,34 +1,212 @@
 [
     {
-        "id"     : "test1",
-        "lvl"    : 1,
-        "symbol" : "rect",
-        "letter" : "0",
-        "require": [],
-        "pos"    : [100,200]
+        "id"     : "bin1", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b1",
+        "pos"    : [400,200], "require": ["intro"],
+        "path" : "binary/bin1.html",
+        "answer" : "2d44c1a894d1cc4a01894cc1c858f277cccfe4bfc88f304616fdbab487eeaebd"
     },
     {
-        "id"     : "test2",
-        "lvl"    : 2,
-        "symbol" : "rect",
-        "letter" : "1",
-        "require": ["test1"],
-        "pos"    : [300,100]
+        "id"     : "bin2", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b2",
+        "path" : "binary/bin2.html",
+        "pos"    : [600,200], "require": ["bin1"],
+        "answer" : ""
     },
     {
-        "id"     : "test3",
-        "lvl"    : 3,
-        "symbol" : "rect",
-        "letter" : "2",
-        "require": ["test1"],
-        "pos"    : [300,300]
+        "id"     : "bin3", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b3",
+        "path" : "binary/bin3.html",
+        "pos"    : [800,200], "require": ["bin2"],
+        "answer" : ""
     },
     {
-        "id"     : "test4",
-        "lvl"    : 4,
-        "symbol" : "rect",
-        "letter" : "3",
-        "require": ["test2","test3"],
-        "pos"    : [500,200]
+        "id"     : "bin4", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b4",
+        "path" : "binary/bin4.html",
+        "pos"    : [1000,100], "require": ["bin3"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin5", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b5",
+        "path" : "binary/bin5.html",
+        "pos"    : [1000,300], "require": ["bin3"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin6", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b6",
+        "path" : "binary/bin6.html",
+        "pos"    : [1200,200], "require": ["bin4","bin5"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin7", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b7",
+        "path" : "binary/bin7.html",
+        "pos"    : [1400,200], "require": ["bin6"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin8", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b8",
+        "path" : "binary/bin8.html",
+        "pos"    : [1400,400], "require": ["bin6"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin9", "lvl"    : 1,  "symbol" : "rect",  "letter" : "b9",
+        "path" : "binary/bin9.html",
+        "pos"    : [1400,0], "require": ["bin6"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin-ad1", "lvl"    : 2,  "symbol" : "rect",  "letter" : "b1",
+        "path" : "binary-ad/bin1.html",
+        "pos"    : [1000,-200], "require": ["bin9"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin-ad2", "lvl"    : 2,  "symbol" : "rect",  "letter" : "b2",
+        "path" : "binary-ad/bin2.html",
+        "pos"    : [1200,-200], "require": ["bin9"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin-ad3", "lvl"    : 2,  "symbol" : "rect",  "letter" : "b3",
+        "path" : "binary-ad/bin3.html",
+        "pos"    : [1400,-200], "require": ["bin9"],
+        "answer" : ""
+    },
+    {
+        "id"     : "bin-ad4", "lvl"    : 2,  "symbol" : "rect",  "letter" : "b4",
+        "path" : "binary-ad/bin4.html",
+        "pos"    : [1600,-200], "require": ["bin9"],
+        "answer" : ""
+    },
+    {
+        "id"     : "log1", "lvl"    : 1,  "symbol" : "rect",  "letter" : "l1",
+        "path" : "logic/log1.html",
+        "pos"    : [300,-100], "require": ["intro"],
+        "answer" : ""
+    },
+    {
+        "id"     : "log2", "lvl"    : 1,  "symbol" : "rect",  "letter" : "l2",
+        "path" : "logic/log2.html",
+        "pos"    : [500,-100], "require": ["log1"],
+        "answer" : ""
+    },
+    {
+        "id"     : "log3", "lvl"    : 1,  "symbol" : "rect",  "letter" : "l3",
+        "path" : "logic/log3.html",
+        "pos"    : [500,-300], "require": ["log2"],
+        "answer" : ""
+    },
+    {
+        "id"     : "log4", "lvl"    : 1,  "symbol" : "rect",  "letter" : "l4",
+        "path" : "logic/log4.html",
+        "pos"    : [300,-300], "require": ["log3"],
+        "answer" : ""
+    },
+    {
+        "id"     : "log5", "lvl"    : 1,  "symbol" : "rect",  "letter" : "l5",
+        "path" : "logic/log5.html",
+        "pos"    : [300,-500], "require": ["log4"],
+        "answer" : ""
+    },
+    {
+        "id"     : "log6", "lvl"    : 1,  "symbol" : "rect",  "letter" : "l6",
+        "path" : "logic/log6.html",
+        "pos"    : [500,-500], "require": ["log5"],
+        "answer" : ""
+    },
+    {
+        "id"     : "xor1", "lvl"    : 2,  "symbol" : "rect",  "letter" : "x1",
+        "path" : "xor/xor1.html",
+        "pos"    : [200,300], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "xor2", "lvl"    : 2,  "symbol" : "rect",  "letter" : "x2",
+        "path" : "xor/xor2.html",
+        "pos"    : [200,400], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "xor3", "lvl"    : 2,  "symbol" : "rect",  "letter" : "x3",
+        "path" : "xor/xor3.html",
+        "pos"    : [200,500], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "xor4", "lvl"    : 2,  "symbol" : "rect",  "letter" : "x4",
+        "path" : "xor/xor4.html",
+        "pos"    : [200,600], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "xor5", "lvl"    : 2,  "symbol" : "rect",  "letter" : "x5",
+        "path" : "xor/xor5.html",
+        "pos"    : [200,800], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "xor6", "lvl"    : 2,  "symbol" : "rect",  "letter" : "x6",
+        "path" : "xor/xor6.html",
+        "pos"    : [200,900], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls1", "lvl"    : 1,  "symbol" : "rect",  "letter" : "c1",
+        "path" : "cls/cls1.html",
+        "pos"    : [400,400], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls2", "lvl"    : 1,  "symbol" : "rect",  "letter" : "c2",
+        "path" : "cls/cls2.html",
+        "pos"    : [400,500], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls3", "lvl"    : 1,  "symbol" : "rect",  "letter" : "c3",
+        "path" : "cls/cls3.html",
+        "pos"    : [400,600], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls4", "lvl"    : 1,  "symbol" : "rect",  "letter" : "c4",
+        "path" : "cls/cls4.html",
+        "pos"    : [400,700], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls5", "lvl"    : 1,  "symbol" : "rect",  "letter" : "c5",
+        "path" : "cls/cls5.html",
+        "pos"    : [400,800], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls6", "lvl"    : 1,  "symbol" : "rect",  "letter" : "c6",
+        "path" : "cls/cls6.html",
+        "pos"    : [400,900], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls7", "lvl"    : 1,  "symbol" : "rect",  "letter" : "c7",
+        "path" : "cls/cls7.html",
+        "pos"    : [400,1000], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls2-1", "lvl"    : 2,  "symbol" : "rect",  "letter" : "c1",
+        "path" : "cls2/cls1.html",
+        "pos"    : [500,300], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "cls2-2", "lvl"    : 2,  "symbol" : "rect",  "letter" : "c2",
+        "path" : "cls2/cls2.html",
+        "pos"    : [500,400], "require": [],
+        "answer" : ""
+    },
+    {
+        "id"     : "intro", "lvl"    : 0,  "symbol" : "rect",  "letter" : "i",
+        "path" : "misc/intro.html",
+        "pos"    : [100,200], "require": [],
+        "answer" : "7692a3e0c743189add77194e6985eece985d3a6f30f7f6a2a2e80c55f5f1c741"
     }
 ]

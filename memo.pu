@@ -1,0 +1,46 @@
+@startuml
+
+node start
+node bin
+node base
+node hex
+node xor
+node classic
+node caesar
+node substitution
+node encode
+node hash
+node baseXX
+node URL
+node puzzle
+node search
+node math
+node Modulo
+node RSA
+node DLP
+node block
+node algo
+node binsearch
+
+start --> bin
+start --> math
+math --> Modulo
+Modulo --> RSA
+Modulo --> DLP
+bin --> base
+bin --> hex
+bin --> xor
+start --> classic
+classic --> caesar
+classic --> substitution
+start --> encode
+encode --> baseXX
+encode --> URL
+encode --> hash
+math --> algo
+math --> puzzle
+encode --> search 
+math --> binsearch
+encode --> block
+
+@enduml
